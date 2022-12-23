@@ -2,7 +2,7 @@ import cv2
 import os
 
 # Demander à l'utilisateur de saisir le nom de l'image
-image_name = input("Saisissez le nom de l'image :")
+image_name = input("Saisissez le nom de l'image (ex: image.jpg) :")
 
 # Lire l'image et la stocker dans une variable
 image = cv2.imread(image_name)
