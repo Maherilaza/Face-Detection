@@ -24,3 +24,13 @@ HOW TO USE
 5. If you want to save an image with detected faces, press the "o" key on your keyboard. The image will be saved to the specified folder with a unique name (e.g. "image_0.jpg", "image_1.jpg", etc.).
 
 6. To stop the face detection process, close the GUI window or press the "q" key on your keyboard.
+
+NOTES
+
+. The program will stop capturing frames and terminate when the device's camera is turned off or there are no more frames to capture.
+
+. The program may run slower on devices with low processing power.
+
+. The face detection accuracy may vary depending on the lighting conditions and the quality of the camera.
+
+. I hope this documentation helps you understand and use the program effectively. Let me know if you have any questions or need further clarification.
