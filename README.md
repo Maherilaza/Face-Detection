@@ -2,8 +2,8 @@
 This Python code uses OpenCV and multiple face classifiers to detect faces in a photo and save these faces to a folder.
 
 # Prerequisites
-. Python 3
-. OpenCV
+Python 3,
+OpenCV
 
 # Usage
 1 Download or clone this repository to your computer.
