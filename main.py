@@ -1,76 +1,39 @@
 import cv2
-import dlib
-import tkinter as tk
 import os
-from PIL import Image, ImageTk
 
-# Crée une fenêtre principale
-root = tk.Tk()
-root.title("Détecteur de visages")
+# Demander à l'utilisateur de saisir le nom de l'image
+image_name = input("Saisissez le nom de l'image :")
 
-# Champ de saisie pour demander à l'utilisateur le nom du dossier de destination
-folder_name_entry = tk.Entry(root)
-folder_name_entry.pack()
+# Lire l'image et la stocker dans une variable
+image = cv2.imread(image_name)
 
-# Bouton pour lancer la détection de visages
-detect_button = tk.Button(root, text="Détecter les visages", command=detect_faces)
-detect_button.pack()
+# Charger les classifieurs de visages
+face_cascade1 = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
+face_cascade2 = cv2.CascadeClassifier('haarcascade_profileface.xml')
 
-# Label pour afficher l'image avec les visages détectés
-image_label = tk.Label(root)
-image_label.pack()
+# Détecter les visages sur l'image avec le premier classifieur
+faces1 = face_cascade1.detectMultiScale(image, 1.3, 5)
 
-# Crée un détecteur de visage en utilisant dlib.get_frontal_face_detector
-face_detector = dlib.get_frontal_face_detector()
+# Détecter les visages sur l'image avec le second classifieur
+faces2 = face_cascade2.detectMultiScale(image, 1.3, 5)
 
-def detect_faces():
-    # Ouvre la caméra
-    camera = cv2.VideoCapture(0)
+# Créer le dossier 'visages' s'il n'existe pas
+if not os.path.exists('visages'):
+    os.makedirs('visages')
 
-    # Récupère le nom du dossier de destination
-    folder_name = folder_name_entry.get()
+# Parcourir le tableau de coordonnées des visages détectés avec le premier classifieur
+i = 1
+for (x,y,w,h) in faces1:
+    # Découper le visage de l'image
+    face_cropped = image[y:y+h, x:x+w]
+    # Enregistrer le visage dans le dossier
+    cv2.imwrite('visages/visage_' + str(i) + '.jpg', face_cropped)
+    i += 1
 
-    # Crée le dossier s'il n'existe pas
-    if not os.path.exists(folder_name):
-        os.makedirs(folder_name)
-
-    # Compteur pour donner un nom unique aux images sauvegardées
-    count = 0
-
-    # Récupère les frames de la caméra en boucle
-    while True:
-        ret, frame = camera.read()
-        if not ret:
-            break
-
-        # Détecte les visages dans l'image en utilisant le détecteur de visage
-        faces = face_detector(frame)
-
-        # Dessine un rectangle autour de chaque visage détecté
-        for face in faces:
-            x, y, w, h = face.left(), face.top(), face.width(), face.height()
-            cv2.rectangle(frame, (x, y), (x + w, y + h), (255, 0, 0), 2)
-
-        # Affiche l'image avec les visages détectés dans le label
-        frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-        frame = frame.resize((400, 300))
-        frame = Image.fromarray(frame)
-        frame = ImageTk.PhotoImage(frame)
-        image_label.configure(image=frame)
-        image_label.image = frame
-        root.update_idletasks()
-
-        # Demande à l'utilisateur s'il souhaite sauvegarder l'image
-        save = input("Sauvegarder l'image ? (o/n) ")
-        if save == 'o':
-            # Sauvegarde l'image dans le dossier
-            image_name = f"{folder_name}/image_{count}.jpg"
-            cv2.imwrite(image_name, frame)
-            count += 1
-
-    # Libère les ressources de la caméra
-    camera.release()
-
-# Affiche la fenêtre principale
-root.mainloop()
-       
+# Parcourir le tableau de coordonnées des visages détectés avec le second classifieur
+for (x,y,w,h) in faces2:
+    # Découper le visage de l'image
+    face_cropped = image[y:y+h, x:x+w]
+    # Enregistrer le visage dans le dossier
+    cv2.imwrite('visages/visage_' + str(i) + '.jpg', face_cropped)
+    i += 1

@@ -1,31 +1,23 @@
-# GI-D-Face-Detector-
-. Programme de détection de visages:
-Ce programme a été conçu pour détecter les visages en temps réel en utilisant la caméra de l'appareil et enregistrer les images avec les visages détectés dans un dossier spécifié par l'utilisateur.
+# Détection de visages avec OpenCV
+Ce code Python utilise OpenCV et plusieurs classifieurs de visages pour détecter les visages sur une photo et enregistrer ces visages dans un dossier.
 
-Prérequis:
+# Prérequis:
+. Python 3
+. OpenCV
 
-Pour exécuter ce programme, vous devrez avoir installé les bibliothèques suivantes :
-. 'cv2' : cette bibliothèque est utilisée pour capturer les frames de la caméra de l'appareil.
-. 'dlib' : cette bibliothèque est utilisée pour détecter les visages dans les images.
-. 'tkinter' : cette bibliothèque est utilisée pour créer l'interface graphique utilisateur (GUI).
-. 'PIL' : cette bibliothèque est utilisée pour afficher les images avec les visages détectés dans la GUI.
+# Utilisation :
+1. Téléchargez ou clonez ce répertoire sur votre ordinateur.
+2. Ouvrez un terminal et naviguez jusqu'au répertoire du code.
+3. Exécutez le code en tapant la commande suivante : python detect_faces.py
+4. Suivez les instructions à l'écran pour saisir le nom de l'image à traiter.
+5. Les visages détectés sur l'image seront enregistrés dans un dossier nommé 'visages'.
 
-Comment utiliser:
-1. Exécutez le programme et une fenêtre GUI s'ouvrira.
+# Notes
+. Assurez-vous de remplacer 'nom_du_classifieur_1.xml' et 'nom_du_classifieur_2.xml' par les noms des fichiers XML contenant les classifieurs de visages que vous souhaitez utiliser.
 
-2. Dans le champ de saisie en haut de la fenêtre, entrez le nom du dossier où vous souhaitez enregistrer les images avec les visages détectés. Le dossier sera créé s'il n'existe pas.
+.Vous pouvez ajouter autant de classifieurs que vous le souhaitez en suivant la même approche.
 
-3. Cliquez sur le bouton "Détecter les visages" pour lancer le processus de détection de visages.
+.Vous pouvez également entraîner votre propre classifieur de visages en utilisant l'algorithme AdaBoost en utilisant la bibliothèque d'apprentissage automatique d'OpenCV, comme décrit dans la documentation d'OpenCV : https://docs.opencv.org/3.4/dc/d88/tutorial_traincascade.html. Cependant, cela peut être un processus complexe et nécessite une bonne connaissance de l'apprentissage automatique et de la bibliothèque d'OpenCV.
 
-4. Le programme commencera à capturer les frames de la caméra de l'appareil et à les afficher dans la fenêtre GUI. Pour chaque frame, il détectera tous les visages présents dans l'image et dessinera un rectangle bleu autour d'eux.
-
-5. Si vous souhaitez enregistrer une image avec les visages détectés, appuyez sur la touche "o" de votre clavier. L'image sera enregistrée dans le dossier spécifié avec un nom unique (par exemple "image_0.jpg", "image_1.jpg", etc.).
-
-6. Pour arrêter le processus de détection de visages, fermez la fenêtre GUI ou appuyez sur la touche "q" de votre clavier.
-
-Remarques :
-. Le programme arrêtera de capturer les frames et se terminera lorsque la caméra de l'appareil sera éteinte ou qu'il n'y aura plus de frames à capturer.
-. Le programme peut s'exécuter plus lentement sur les appareils avec une faible puissance de traitement.
-. La précision de la détection de visages peut varier en fonction des conditions d'éclairage et de la qualité de la caméra.
-
-J'espère que cette documentation vous aidera à comprendre et à utiliser efficacement le programme. N'hésitez pas à me contacter si vous avez des questions ou avez besoin de plus de précisions.
+# Licence
+Ce code est sous licence MIT. Vous êtes libre de l'utiliser et de le modifier à votre convenance.
