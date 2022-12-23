@@ -17,7 +17,7 @@ OpenCV
 5 > The detected faces in the image will be saved to a folder named 'visage'.
 
 # Notes
-`You can also train your own face classifier using the AdaBoost algorithm using the OpenCV machine learning library, as described in the OpenCV documentation: https://docs.opencv.org/3.4/dc/d88/tutorial_traincascade.html. However, this can be a complex process and requires a good understanding of machine learning and the OpenCV library.`
+**You can also train your own face classifier using the AdaBoost algorithm using the OpenCV machine learning library, as described in the OpenCV documentation: [https://docs.opencv.org/3.4/dc/d88/tutorial_traincascade.html](https://). However, this can be a complex process and requires a good understanding of machine learning and the OpenCV library.**
 
 # License
 This code is licensed under the MIT license. You are free to use and modify it as you see fit.
