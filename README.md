@@ -13,8 +13,6 @@ This Python code uses OpenCV and multiple face classifiers to detect faces in a 
 5 he detected faces in the image will be saved to a folder named 'faces'.
 
 # Notes
-.Be sure to replace 'name_of_classifier_1.xml' and 'name_of_classifier_2.xml' with the names of the XML files containing the face classifiers you want to use.
-.You can add as many classifiers as you want following the same approach.
 .You can also train your own face classifier using the AdaBoost algorithm using the OpenCV machine learning library, as described in the OpenCV documentation: https://docs.opencv.org/3.4/dc/d88/tutorial_traincascade.html. However, this can be a complex process and requires a good understanding of machine learning and the OpenCV library.
 
 # License
