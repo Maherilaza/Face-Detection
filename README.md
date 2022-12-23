@@ -10,7 +10,7 @@ OpenCV
 
 2 > Open a terminal and navigate to the code directory.
 
-3 > Run the code by typing the following command: python3 setup.py or ./stup.sh
+3 > Run the code by typing the following command: python setup.py or ./setup.sh
 
 4 > Follow the on-screen instructions to input the name of the image to process.
 
