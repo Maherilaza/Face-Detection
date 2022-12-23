@@ -6,10 +6,14 @@ Python 3,
 OpenCV
 
 # Usage
-1 Download or clone this repository to your computer.
+1 > Download or clone this repository to your computer.
+
 2 Open a terminal and navigate to the code directory.
+
 3 Run the code by typing the following command: python detect_faces.py
+
 4 Follow the on-screen instructions to input the name of the image to process.
+
 5 he detected faces in the image will be saved to a folder named 'faces'.
 
 # Notes
