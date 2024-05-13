@@ -3,7 +3,8 @@ Ce script utilise OpenCV pour détecter les visages dans une image.
 
 > **SOMMAIRE**
 ``` shell
-python3 Setup.py
+pip install -r requirements.txt /
+python3 main.py
 ```
 + <ins>Classifieurs</ins>
     + haarcascade_frontalface_default.xml : `Détection visages vue de face.`
