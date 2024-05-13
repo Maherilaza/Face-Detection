@@ -3,7 +3,7 @@ Ce script utilise OpenCV pour détecter les visages dans une image.
 
 > **SOMMAIRE**
 ``` shell
-pip install -r requirements.txt /
+pip install -r requirements.txt \
 python3 main.py
 ```
 + <ins>Classifieurs</ins>
