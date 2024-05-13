@@ -1,15 +1,9 @@
 # Détection de visages avec OpenCV
 Ce script utilise OpenCV pour détecter les visages dans une image fournie par l'utilisateur.
 
-
-+ ## **Installation**
-```python
-pip install -r requirement
-```
-
 + ## **Utilisation**
 ```python
-python3 setup.py
+Setup.py
 ```
 
 + ## **Classifieurs de Visages**
