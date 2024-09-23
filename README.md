@@ -4,7 +4,7 @@
 Ce script utilise OpenCV pour détecter les visages dans une image.
 
 > **Get started**
-``` shell
+``` bash
 pip install -r requirements.txt \
 python3 main.py
 ```
