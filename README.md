@@ -1,4 +1,6 @@
 # Détection de visages avec OpenCV
+![Python](https://img.shields.io/badge/made_with-python-yellow)
+
 Ce script utilise OpenCV pour détecter les visages dans une image.
 
 > **Get started**
